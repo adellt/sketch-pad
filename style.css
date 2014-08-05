@@ -4,19 +4,9 @@
 	height:800px;
 }
 
-.blue {
-	background-color:blue;
-}
-
 .box {
 	background-color:black;
-	width:100px;
-	height:100px;
+	width:200px;
+	height:200px;
 	display:inline-block;
-}
-
-div div {
-	background-color:black;
-	width:100px;
-	height:100px;
 }
