@@ -1,0 +1,22 @@
+#wrapper{
+	/*background-color:red;*/
+	width:800px;
+	height:800px;
+}
+
+.blue {
+	background-color:blue;
+}
+
+.box {
+	background-color:black;
+	width:100px;
+	height:100px;
+	display:inline-block;
+}
+
+div div {
+	background-color:black;
+	width:100px;
+	height:100px;
+}
