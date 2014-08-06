@@ -4,18 +4,18 @@
 }
 
 #wrapper{
+	background-image: url(pattern.jpg);
 	border:2px solid blue;
 	width:800px;
 	height:800px;
 }
 
 .box {
-	border:1px solid black;
-	width:198px;
-	height:198px;
+	background-color:black;
+	/*border:1px solid black;*/
 	display:inline-block;
 }
 
 .trail {
-	background-color:black;
+	opacity: 0;
 }
