@@ -4,7 +4,7 @@
 }
 
 #wrapper{
-	background-image: url(pattern.jpg);
+	/*background-image: url(pattern.jpg);*/
 	border:2px solid blue;
 	width:800px;
 	height:800px;
@@ -16,6 +16,10 @@
 	display:inline-block;
 }
 
-.trail {
+.solid {
 	opacity: 0;
+}
+
+.trail {
+	background-color: red;
 }
