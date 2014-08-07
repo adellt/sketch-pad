@@ -16,10 +16,10 @@ $(document).ready(function(){
 			$(this).addClass("trail");
 		});
 	});
-
+	
 
 	$('#fade').click(function() {
-		
+
 		var number = $("#number").val();
 		$("#wrapper").html("");
 
@@ -29,15 +29,21 @@ $(document).ready(function(){
 
 		var size = parseInt($("#wrapper").css("width"),10) / parseInt(number, 10) + "px";
 		$(".box").css({"width":size, "height":size});
-		$(".box").css("opacity":"100");
+		$(".box").css("opacity",1);
 
 		$(".box").on("mouseover", function(){
 			var opacity = $(".box").css("opacity");
-			if ()
-			$(this).css("opacity", opacity);
-			//reduce opacity by 10 every time
+			
+			if (opacity === 0) {
+				opacity = 0;
+			} else {
+				opacity = opacity-0.1;
+			};
+						
+			$(this).css("opacity", opacity);//Is not changing opacity, but is adding trail
 		});
 	});
+
 
 
 })
