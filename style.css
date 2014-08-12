@@ -1,18 +1,44 @@
+body {
+	font-family:Verdana, Arial, sans-serif;
+	font-size:12px;
+}
+
 #buttons {
-	width:800px;
-	height:50px;
+	width:600px;
+	margin: 10px auto;
+	text-align: center;
+}
+
+li {
+	text-decoration: none;
+	display:inline;
+}
+
+button {
+	background
+}
+
+p {
+	padding-bottom: 5px;
 }
 
 #wrapper{
-	/*background-image: url(pattern.jpg);*/
-	border:2px solid blue;
-	width:800px;
-	height:800px;
+	width:600px;
+	height:600px;
+	margin:0 auto;
+	border:1px solid black;
+	vertical-align: center;
+	text-align: center;
+}
+
+#url {
+	width:600px;
+	margin:10px auto;
+	text-align: center;
 }
 
 .box {
 	background-color:black;
-	/*border:1px solid black;*/
 	display:inline-block;
 }
 
@@ -22,4 +48,8 @@
 
 .trail {
 	background-color: red;
+}
+
+#number {
+	width:20px;
 }
