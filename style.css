@@ -7,7 +7,7 @@ body {
 	width:650px;
 	background-color:#E6E8E7;
 	margin:0 auto;
-	height:690px;
+	height:715px;
 }
 
 #buttons {
@@ -36,6 +36,11 @@ body {
 li {
 	text-decoration: none;
 	display:inline;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: bold;
 }
 
 p {

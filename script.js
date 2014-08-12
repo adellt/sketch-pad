@@ -25,28 +25,11 @@ $(document).ready(function(){
 			$("#puzzle").append("<div class='box'>&nbsp;</div>");
 		}
 
-		var size = parseInt($("#puzzle").css("width"),10) / parseInt(number, 10) + "px";
+		var size = Math.round(parseInt($("#puzzle").css("width"),10) / parseInt(number, 10));
+		console.log(size);
+		$("#puzzle").css({"width":(size*number), "height":(size*number)});
 		$(".box").css({"width":size, "height":size});
-	
 
-/*
-		var size = parseInt($("#puzzle").css("width"),10) / parseInt(number, 10);
-
-		for (var i = 1; i <= (number*number); i++) {
-			$("#puzzle").append("<div class='box'>&nbsp;</div>");
-			console.log("Number: "+number);
-			if (i % 2 === 0) {
-				$(".box").css({"width":Math.floor(size), "height":Math.floor(size)});
-				console.log("Size: "+size);
-				console.log("Floor: " +Math.floor(size));
-			}
-			else {
-				$(".box").css({"width":Math.ceil(size), "height":Math.ceil(size)});
-				console.log("Size:" +size);
-				console.log("Ceil: "+Math.ceil(size));
-			}
-		}
-*/
 		$("#url").append("<p><a href='" + pics[pic-1][1] + "' target='_blank'>Go to picture</a></p>");
 		$("#url").show();
 
