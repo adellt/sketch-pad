@@ -3,9 +3,33 @@ body {
 	font-size:12px;
 }
 
+#container {
+	width:650px;
+	background-color:#E6E8E7;
+	margin:0 auto;
+	height:690px;
+}
+
 #buttons {
 	width:600px;
-	margin: 10px auto;
+	margin: 0 auto;
+	padding:5px;
+	text-align: center;
+}
+
+#puzzle{
+	width:600px;
+	height:600px;
+	margin: auto;
+	border:1px solid black;
+	vertical-align: center;
+	text-align: center;
+	font-size:1px;
+}
+
+#url {
+	width:600px;
+	padding:10px auto;
 	text-align: center;
 }
 
@@ -14,40 +38,13 @@ li {
 	display:inline;
 }
 
-button {
-	background
-}
-
 p {
-	padding-bottom: 5px;
-}
-
-#wrapper{
-	width:600px;
-	height:600px;
-	margin:0 auto;
-	border:1px solid black;
-	vertical-align: center;
-	text-align: center;
-}
-
-#url {
-	width:600px;
-	margin:10px auto;
-	text-align: center;
+	padding: 5px;
 }
 
 .box {
 	background-color:black;
 	display:inline-block;
-}
-
-.solid {
-	opacity: 0;
-}
-
-.trail {
-	background-color: red;
 }
 
 #number {

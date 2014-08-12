@@ -1,7 +1,6 @@
 $(document).ready(function(){
-	//$("#url").hide();
 
-	//dictionary with pictures urls
+	//Array with pictures urls
 	var pics = [
 		[1, "http://img2.wikia.nocookie.net/__cb20110825150854/iamalive/images/c/c0/The_Awesome_Face_Background_by_DaPhinoXX.jpg"],
 		[2, "http://ozarkspuppies.com/wp-content/uploads/2014/01/White-Morkie-Puppy.jpg"],
@@ -16,20 +15,41 @@ $(document).ready(function(){
 	function init() {
 		var number = $("#number").val();
 		var pic = 1 + Math.floor(Math.random() * 5);
-		$("#wrapper").html("");
+
+		$("#puzzle").html("");
 		$("#url").html("");
-		$("#wrapper").css("background-image", "url(Pictures/"+pic+".jpg)");
-//Does not work for all box sizes. 
+		$("#puzzle").css("background-image", "url(Pictures/"+pic+".jpg)");
+
 //Also need to account for wrong numbers. Bring up alert number.
 		for (var i = 1; i <= (number*number); i++) {
-			$("#wrapper").append("<div class='box'>&nbsp;</div>");
+			$("#puzzle").append("<div class='box'>&nbsp;</div>");
 		}
 
-		var size = parseInt($("#wrapper").css("width"),10) / parseInt(number, 10) + "px";
+		var size = parseInt($("#puzzle").css("width"),10) / parseInt(number, 10) + "px";
 		$(".box").css({"width":size, "height":size});
 	
-		$("#url").append("<a href='" + pics[pic-1][1] + "' target='_blank'>Go to picture</a>");
+
+/*
+		var size = parseInt($("#puzzle").css("width"),10) / parseInt(number, 10);
+
+		for (var i = 1; i <= (number*number); i++) {
+			$("#puzzle").append("<div class='box'>&nbsp;</div>");
+			console.log("Number: "+number);
+			if (i % 2 === 0) {
+				$(".box").css({"width":Math.floor(size), "height":Math.floor(size)});
+				console.log("Size: "+size);
+				console.log("Floor: " +Math.floor(size));
+			}
+			else {
+				$(".box").css({"width":Math.ceil(size), "height":Math.ceil(size)});
+				console.log("Size:" +size);
+				console.log("Ceil: "+Math.ceil(size));
+			}
+		}
+*/
+		$("#url").append("<p><a href='" + pics[pic-1][1] + "' target='_blank'>Go to picture</a></p>");
 		$("#url").show();
+
 	};
 
 	/**********************************
@@ -40,7 +60,7 @@ $(document).ready(function(){
 		init();
 
 		$(".box").on("mouseover", function(){
-			$(this).addClass("solid");
+			$(this).css("opacity", 0);
 		});
 	});
 	
@@ -55,11 +75,12 @@ $(document).ready(function(){
 
 		$(".box").on("mouseover", function(){
 			var opacity = $(".box").css("opacity");
-			
-			if (opacity === 0) {
-				opacity = opacity+0;
+			var nextOpacity = opacity - 0.1;
+
+			if (nextOpacity > 0) {
+				opacity = nextOpacity;
 			} else {
-				opacity = opacity-0.10;
+				opacity = 0;
 			};
 						
 			$(this).css("opacity", opacity);
