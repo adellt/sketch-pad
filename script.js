@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	//Array with pictures urls
+	//Array with pictures urls, for linking at bottom
 	var pics = [
 		[1, "http://img2.wikia.nocookie.net/__cb20110825150854/iamalive/images/c/c0/The_Awesome_Face_Background_by_DaPhinoXX.jpg"],
 		[2, "http://ozarkspuppies.com/wp-content/uploads/2014/01/White-Morkie-Puppy.jpg"],
@@ -15,23 +15,34 @@ $(document).ready(function(){
 	function init() {
 		var number = $("#number").val();
 		var pic = 1 + Math.floor(Math.random() * 5);
+		
+		//Checks is a number is between 1-70 (arbitrary) and clears screen if not
+		if (number > 70 || number < 1 || isNaN(number)) {
+			window.alert("Please select a number between 1 and 70.")
+			$("#puzzle").html("");
+			$("#puzzle").css("background-image", "");
 
-		$("#puzzle").html("");
-		$("#url").html("");
-		$("#puzzle").css("background-image", "url(Pictures/"+pic+".jpg)");
+		} else {
+			// Adds background image
+			$("#puzzle").html("");
+			$("#url").html("");
+			$("#puzzle").css("background-image", "url(Pictures/"+pic+".jpg)");
 
-//Also need to account for wrong numbers. Bring up alert number.
-		for (var i = 1; i <= (number*number); i++) {
-			$("#puzzle").append("<div class='box'>&nbsp;</div>");
-		}
+			//Creates boxes
+			for (var i = 1; i <= (number*number); i++) {
+				$("#puzzle").append("<div class='box'>&nbsp;</div>");
+			}
 
-		var size = Math.round(parseInt($("#puzzle").css("width"),10) / parseInt(number, 10));
-		console.log(size);
-		$("#puzzle").css({"width":(size*number), "height":(size*number)});
-		$(".box").css({"width":size, "height":size});
+			var size = Math.round(parseInt($("#puzzle").css("width"),10) / parseInt(number, 10));
+		
+			//Makes boxes a certain size. Adjusts wrapper box for odd size boxes.
+			$("#puzzle").css({"width":(size*number), "height":(size*number)});
+			$(".box").css({"width":size, "height":size});
 
-		$("#url").append("<p><a href='" + pics[pic-1][1] + "' target='_blank'>Go to picture</a></p>");
-		$("#url").show();
+			//Adds correct URL to bottom of page 
+			$("#url").append("<p><a href='" + pics[pic-1][1] + "' target='_blank'>Go to picture</a></p>");
+			$("#url").show();
+			}
 
 	};
 
